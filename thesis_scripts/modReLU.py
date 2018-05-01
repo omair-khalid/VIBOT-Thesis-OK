@@ -1,6 +1,7 @@
-#author: Omair Khalid
-
-
+'''
+Implementation of modReLU acitvation function
+author: Omair Khalid
+'''
 from keras import backend as K
 from keras.engine.topology import Layer
 import numpy as np
@@ -48,13 +49,7 @@ class modReLU(Layer):
         imag = self.get_imagpart(x)
     
         return K.sqrt(real * real + imag * imag)
-    
-#    def get_angle(self,x):
-#        real = self.get_realpart(x)
-#        imag = self.get_imagpart(x)
-#        comp_num = real + 1j*imag
-#        return T.angle(comp_num)
-        
+
     def __init__(self, **kwargs):
         #self.output_dim = output_dim
         super(modReLU, self).__init__(**kwargs)
@@ -82,14 +77,8 @@ class modReLU(Layer):
         
         real_act = (real/mag)*step2         
         imag_act = (imag/mag)*step2
-        #step3 = comp_num/mag           
-        #mod =  step3 * step2        
-        
-        #real_act = mod.real
-        #imag_act = mod.imag
         
         act = K.concatenate([real_act, imag_act], axis=1)
-        #activation = K.cast_to_floatx(act)
 
         return act
 
