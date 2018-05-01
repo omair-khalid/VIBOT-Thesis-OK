@@ -2,9 +2,10 @@
 """
 Created on Mon Apr 16 17:21:33 2018
 
-@author: Omair Khalid
-"""
+Implementation of zReLU acitvation function
+author: Omair Khalid
 
+"""
 from keras import backend as K
 from keras.engine.topology import Layer
 import numpy as np
