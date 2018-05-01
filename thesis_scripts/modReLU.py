@@ -1,7 +1,7 @@
-'''
+"""
 Implementation of modReLU acitvation function
 author: Omair Khalid
-'''
+"""
 from keras import backend as K
 from keras.engine.topology import Layer
 import numpy as np
